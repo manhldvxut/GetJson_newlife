@@ -1,0 +1,784 @@
+@charset "utf-8";
+/* =========================================================
+colors
+========================================================= */
+@import 'colors';
+
+/* =========================================================
+header
+========================================================= */
+
+$vw-viewport: 750;
+@function vw($font){
+  $vw-context: $vw-viewport * 0.01 * 1px;
+  @return $font / $vw-context * 1vw;
+  @return $font;
+}
+
+.header {
+  &__title {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .header {
+    &__title {
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+/* =========================================================
+Main
+========================================================= */
+.main-contents {
+  margin: 30px auto 0;
+}
+
+@media screen and (min-width: 769px) {
+  .main-contents {
+    width: calc(100% - 80px);
+    margin: 80px auto 0;
+  }
+}
+
+/* =========================================================
+ヘッダー下バナー
+========================================================= */
+.top-bnr-block {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 10px 0;
+
+  .bnr {
+    margin: 0 auto 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .top-bnr-block {
+    padding: 30px 0 0;
+
+    .bnr {
+      margin: 0 auto 20px;
+    }
+  }
+}
+
+/* =========================================================
+YouTube
+========================================================= */
+.youtube {
+  &-block {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px 0 0;
+  }
+
+  &-wrap {
+    position: relative;
+    padding-top: 56.25%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .youtube {
+    &-block {
+      padding: 60px 0 0;
+    }
+  }
+}
+
+/* =========================================================
+Local navigation
+========================================================= */
+.localnav-wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 15px 0 0;
+}
+
+.localnav {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+
+  &__item {
+    position: relative;
+    width: calc(50% - 5px);
+    margin: 0 10px 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      display: block;
+      position: relative;
+      padding: 10px 0;
+      border-radius: 5px;
+      background: $localnav;
+      color: $localnav_txt;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 0.2em;
+
+      &:after {
+        display: inline-block;
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        width: 0;
+        height: 0;
+        transform: translateX(-50%);
+        border-width: 8px 8px 0 8px;
+        border-style: solid;
+        border-color: transparent transparent transparent transparent;
+        content: '';
+        -webkit-transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .localnav-wrap {
+    padding: 0px 0 0;
+  }
+
+  .localnav {
+    padding: 0;
+
+    &__item {
+      width: calc(50% - 24px);
+      margin: 0 40px 0 0;
+
+      a {
+        padding: 30px 0;
+        border-radius: 8px;
+        font-size: 3em;
+
+        &:after {
+          // border-width: 8px 6px 0 6px;
+        }
+
+        &:hover {
+          background: $localnav_on;
+          color: $localnav_on_txt;
+          text-decoration: none;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+/* current */
+body.page-sale .localnav__item01,
+body.page-tag .localnav__item02 {
+  a {
+    background: $localnav_on;
+    color: $localnav_on_txt;
+
+    &:after {
+      // border-color: $localnav_on transparent transparent transparent;
+    }
+  }
+}
+
+/* =========================================================
+Contents block
+========================================================= */
+.contents {
+  &-wrap {
+    // max-width: 1220px;
+    margin: 0 auto 0;
+    padding: 8vw 0;
+    padding-top: 30px;
+    background-color: #7ECEF5;
+  }
+
+  &-block {
+    margin: 0 0 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+      &:before{
+        opacity:0;
+      }
+    }
+  }
+
+  &-ttl {
+    position: relative;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto 20px;
+    background: $title_bk;
+    background: url('../images/blog_ttl.png') 0 0/100% 100% no-repeat;
+    color:#E60012;
+    font-weight: bold;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.15em;
+    line-height: 40px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .contents {
+    &-wrap {
+      // margin: 50px auto 0;
+      padding: 97px 74px;
+    }
+
+    &-block {
+      max-width: 1220px;
+      margin: 0 auto 100px;
+      position: relative;
+      &:before{
+        position:absolute;
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: url('../images/line.svg') no-repeat;
+        bottom: -50px;
+        left: 0;
+      }
+      .item-list{
+        max-width: 1024px;
+        margin: auto;
+      }
+    }
+
+    &-ttl {
+      width: 510px;
+      height: 60px;
+      margin: 0 auto 35px;
+      font-size: 3rem;
+      line-height: 60px;
+    }
+  }
+}
+
+/* =========================================================
+タグ集約
+========================================================= */
+.taglist {
+  overflow: hidden;
+
+  &__item {
+    display: none;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+
+    &:first-child {
+      border-top: 1px solid #ccc;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(-n + 6) {
+      /* 初期表示6件 */
+      display: block;
+    }
+
+    &__in {
+      height: 100%;
+    }
+
+    a {
+      display: block;
+      position: relative;
+      height: 100%;
+      padding: 15px;
+      background: #fff;
+      color: #555;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      text-decoration: none;
+      box-sizing: border-box;
+
+      &:before {
+        display: block;
+        position: absolute;
+        right: 4px;
+        bottom: 4px;
+        width: 0;
+        height: 0;
+        border-width: 0 0 10px 10px;
+        border-style: solid;
+        border-color: transparent transparent #555 transparent;
+        content: '';
+      }
+    }
+  }
+
+  &__txt {
+    margin-top: 15px;
+  }
+
+  &__photo {
+    position: relative;
+    padding: 0 40px;
+  }
+
+  &__kaeru {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    padding: 7px 5px;
+    background: #ea5550;
+    color: #fff;
+    font-size: 10px;
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+
+  &__name {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-size: 1.2rem;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .taglist {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      width: calc(33.33% - 10px);
+      margin: 15px 15px 0 0;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+
+      &:nth-child(-n + 3) {
+        margin-top: 0;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    &__photo {
+      padding: 0;
+    }
+  }
+}
+
+.btn-taglist-more {
+  display: none;
+  width: 100%;
+  max-width: 490px;
+  margin: 20px auto 0;
+  padding: 15px 0;
+  border: none;
+  border-radius: 0;
+  background: #D2CDAD;
+  color: #3C3C3C;
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  @media(max-width: 768px){
+    width: 90%;
+  }
+
+  @media screen and (min-width: 769px) {
+    margin: 50px auto 0;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+/* =========================================================
+OWNLY
+========================================================= */
+.ownly-wrap {
+  padding: 0 10px;
+
+  @media screen and (min-width: 769px) {
+    padding: 0;
+  }
+}
+
+/* =========================================================
+値書き
+========================================================= */
+/* 館ナビ */
+.floornav {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  max-width: 620px;
+  margin: 0 auto;
+  margin: 0 auto;
+  border: 1px solid #000;
+  border-radius: 4px;
+
+  li {
+    width: 50%;
+    margin: 0;
+    list-style: none;
+
+    a {
+      display: block;
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      padding: 3px 0;
+      color: #000;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .floornav {
+    li {
+      a {
+        color: #000;
+        font-size: 2rem;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+/* current */
+body.type1 .floornav .floornav__item01 a,
+body.type2 .floornav .floornav__item02 a,
+body.type3 .floornav .floornav__item03 a,
+body.type4 .floornav .floornav__item04 a {
+  background: #000;
+  color: #fff;
+}
+
+body.type1 .floornav .floornav__item01 a:after,
+body.type2 .floornav .floornav__item02 a:after,
+body.type3 .floornav .floornav__item03 a:after,
+body.type4 .floornav .floornav__item04 a:after {
+  border-color: #000 transparent transparent transparent;
+}
+
+/* 値書き*/
+.salelist-container {
+  margin: 50px 0 0;
+}
+
+.salelist-info1,
+.salelist-info2 {
+  padding: 0px 10px 0;
+  font-size: 1.5rem;
+  line-height: 1.6;
+
+  @media screen and (min-width: 769px) {
+    padding: 0px 0 0;
+  }
+}
+
+.salelists {
+  margin: 20px auto 0;
+
+  @media screen and (min-width: 769px) {
+    margin: 60px auto 0;
+  }
+}
+
+.salelist {
+  padding: 0 0 10px;
+
+  &__title {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 20px;
+    background: $floor_bk;
+    color: $floor_txt;
+    line-height: 1.1;
+
+    .ico-arr {
+      display: inline-block;
+      position: relative;
+      width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      background: $floor_arrow01;
+      text-align: center;
+
+      &:after {
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 3px);
+        left: calc(50% - 4px);
+        width: 0;
+        height: 0;
+        transition-duration: 200ms;
+        border-width: 6px 4px 0 4px;
+        border-style: solid;
+        border-color: $floor_arrow02 transparent transparent transparent;
+        content: '';
+      }
+    }
+
+    &__floor {
+      font-family: 'Comfortaa', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  &__shop {
+    border-top: 1px solid #ccc;
+    font-size: 1.4rem;
+
+    &:first-child {
+      margin-top: 0;
+      border-top: none;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 30px 15px;
+    color: #000;
+    text-decoration: none;
+  }
+
+  &__data {
+    display: table;
+    width: 100%;
+
+    &__item01 {
+      display: table-cell;
+      width: 80px;
+      padding-right: 15px;
+      vertical-align: middle;
+
+      img {
+        border: 1px solid #ccc;
+      }
+    }
+
+    &__item02 {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  &__shopname {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  &__text {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .salelist {
+    padding: 0 0 40px;
+
+    &__title {
+      &__floor {
+        font-size: 3rem;
+      }
+    }
+
+    &__cont {
+      &__in {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+    }
+
+    &__shop {
+      width: 50%;
+      margin-top: 0;
+      padding: 30px 20px;
+      box-sizing: border-box;
+
+      &:first-child {
+      }
+
+      &:nth-child(-n + 2) {
+        border: none;
+      }
+    }
+
+    &__link {
+      &:hover {
+        text-decoration: none;
+        opacity: 0.7;
+      }
+    }
+
+    &__data {
+      &__item01 {
+        width: 120px;
+        padding-right: 25px;
+
+        img {
+          width: 100%;
+          border: none;
+        }
+      }
+
+      &__item02 {
+      }
+    }
+
+    &__shopname {
+      font-size: 1.3rem;
+    }
+
+    &__text {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* 開閉時の矢印*/
+.salelist {
+  &__title {
+    &.is-open {
+      .ico-arr {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+/* =========================================================
+フッター上バナー
+========================================================= */
+.footer-bnr {
+  max-width: 1024px;
+  margin: 30px auto 0;
+  padding: 0 40px;
+}
+
+.ft-bnr {
+  margin: 0 auto 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .footer-bnr {
+    display: flex;
+    justify-content: center;
+    margin: 120px auto 0;
+    padding: 0;
+  }
+
+  .ft-bnr {
+    width: calc(50% - 10px);
+    margin: 0 20px 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+/* =========================================================
+フッター上SNSボタン
+========================================================= */
+.footer__social {
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+
+  .social__item {
+    display: inline-block;
+    height: 20px;
+    margin: 0 2px;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: top;
+
+    @media screen and (min-width: 769px) {
+      margin: 0 11px;
+    }
+
+    a:hover {
+      opacity: 0.6;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+}
+.contents-wrap{
+  background-color: #FDF6F1;
+  padding-top: 60px;
+  @media(min-width: 769px){
+    padding-bottom: 160px;
+  }
+}

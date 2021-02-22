@@ -1,0 +1,26 @@
+@charset "UTF-8";
+$primary-color: #7ECEF5;
+$secondary-color: #EA536C;
+$main-bg-color: #fff8ef;
+
+//ローカルナビ
+$localnav: $secondary-color; //ボタン背景
+$localnav_txt: #fff; //ボタンテキスト
+
+//ローカルナビ、ホバー・カレント時
+$localnav_on: $primary-color; //ボタン背景
+$localnav_on_txt: #fff; //ボタンテキスト
+
+//タイトル
+$title_bk: #000; //タイトル背景
+$title_txt: #fff; //タイトルテキスト
+
+//MOREボタン
+$more_bk: $secondary-color; //ボタン背景
+$more_txt: #fff; //ボタンテキスト
+
+//値書きフロア
+$floor_bk: #000; //フロア背景
+$floor_txt: #fff; //フロアテキスト
+$floor_arrow01: #fff; //右端矢印、円の背景
+$floor_arrow02: #000; //右端矢印、三角の色
